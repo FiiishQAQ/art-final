@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #f4f4f4;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.relation {
+  stroke-width: 1px;
+  stroke-opacity: 0.3;
+  fill: none;
+  /*mix-blend-mode: multiply;*/
+  transition-duration: 300ms;
+}
+
+.highlighting.relation {
+  stroke-width: 2px;
+  stroke-opacity: 0.6;
+}
+
+.highlighting_group.relation {
+  stroke-width: 1.5px;
+  stroke-opacity: 0.7;
+}
+
+.textGroupRectText, .textNodeGroupRectText {
+  font-size: 7px;
+  stroke-width: 2px;
+  paint-order: stroke;
+  stroke: white;
+  text-anchor: middle;
+  cursor: default;
+}
+
+.textNodeGroupRectText {
+  text-anchor: start;
+}
+
+.mask {
+  pointer-events: none;
+}
+
+.tick text {
+  fill: #c0c0c0;
+  text-anchor: start;
+  transform: translate(24px, 0px);
+  stroke-width: 8px;
+  paint-order: stroke;
+  stroke: white;
+}
+
+.textNodeGroupRect, .textNode {
+  transition-duration: 300ms;
+}
+
+.card {
+  background: white;
+  border-radius: 4px;
+}
+
+.svg_con {
+  display: flex;
+  align-items: center;
+  overflow: auto;
+  border-width: 0 2px;
+  border-style: solid;
+  border-color: #f0f0f0;
+  /*box-shadow: 0 8px 16px rgba(0,0,0,0.06);*/
+}

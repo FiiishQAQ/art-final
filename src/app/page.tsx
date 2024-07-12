@@ -1,112 +1,383 @@
-import Image from "next/image";
+'use client'
+
+import staticRecords from './records-new.json';
+import Graph from "@/app/((comp))/Graph";
+import {Color} from "d3";
+import {estDriver} from "@/lib/neo4j";
+import {Fragment, useCallback, useEffect, useRef, useState} from "react";
+import {Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form";
+import {useForm} from "react-hook-form";
+import {Input} from "@/components/ui/input";
+import {Button} from "@/components/ui/button";
+import {Separator} from "@/components/ui/separator";
+import {ChevronsUpDown, GripVertical} from "lucide-react";
+import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious} from "@/components/ui/carousel";
+import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent, DropdownMenuLabel, DropdownMenuSeparator,
+  DropdownMenuTrigger
+} from "@/components/ui/dropdown-menu";
+import {SortableList} from "@/components/SortableList";
+
+const layerName = ['文本', '文本属性', '三级子主题', '二级子主题', '一级子主题', '主题']
+
+export {layerName}
+
+const initialLayerOrder = [0,1,2,3,4,5];
+
+export type BaseNode = {
+  identity: number;
+  labels: {
+    [key: string]: any
+  };
+  properties: {
+    [key: string]: any
+  };
+  path: Path,
+  pre?: BaseNode,
+  suf?: BaseNode,
+  x?: number,
+  y?: number,
+  color?: Color,
+  pathClass?: string,
+  ichCate?: BaseNode,
+  indexInPath?: number,
+}
+
+export type Path = [
+  textNode: BaseNode & { ichCate: NodeType } | undefined,
+  typeNode: BaseNode | undefined,
+  subSubjectNodes1: BaseNode | undefined,
+  subSubjectNodes2: BaseNode | undefined,
+  subSubjectNodes3: BaseNode | undefined,
+  subjectNode: BaseNode | undefined,
+];
+
+export type Relation = {
+  identity: string;
+  start: number;
+  end: number;
+  source: BaseNode;
+  target: BaseNode;
+  path: Path;
+  pathClass?: string;
+};
+
+export enum NodeType {
+  ICH_BROCADE = "ns0__artisticFeatureBrocade",
+  ICH_EMBROIDERY = "ns0__artisticFeatureEmbroidery",
+  ICH_NYP = "ns0__artisticFeatureNewYearPicture",
+  TEXT = "ns0__artisticFeatureDescription",
+  TYPE = "ns0__artisticFeatureFeatureType",
+  SUB_SUBJECT = "ns0__artisticFeatureSubSubject",
+  SUBJECT = "ns0__artisticFeatureSubject",
+}
+
+export type Nodes = {
+  layerNum: number,
+  ichNodes: (BaseNode & {})[],
+  textNodes: (BaseNode & {})[],
+  typeNodes: (BaseNode & {})[],
+  subSubjectNodes: [(BaseNode & {})[], (BaseNode & {})[], (BaseNode & {})[]],
+  subjectNodes: (BaseNode & {})[],
+}
+
+function deduplicatedPush(node: BaseNode, arr: any[], hashArr: { [key: string | number]: BaseNode }) {
+  if (!hashArr[node.identity]) {
+    hashArr[node.identity] = node;
+    arr.push(node);
+  }
+}
+
+const ichTypes = [
+  {
+    cate: '锦',
+    types: ['云锦', '宋锦', '蜀锦']
+  },
+  {
+    cate: '绣',
+    types: ['羌绣', '京绣',]
+  },
+  {
+    cate: '年画',
+    types: ['年画', '凤翔', '杨柳青', '桃花坞']
+  },
+]
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+  const [records, setRecords] = useState(staticRecords);
+  const [keyword, setKeyword] = useState('');
+  const [selectedIchTypes, setSelectedIchTypes] = useState<string[]>([]);
+
+  async function doQuery() {
+    const {records, summary, keys} = await estDriver.executeQuery(
+      `
+      match p=(n)-[*1..6]->(n1:ns0__artisticFeatureSubject)
+      where n.ns1__name in $selectedIchTypes
+      ${keyword ? 'AND ANY(x IN nodes(p) WHERE ANY(prop IN keys(x) WHERE x[prop] CONTAINS $keyword))' : ''}
+      return p
+      `,
+      // 'MATCH (n:ns0__artisticFeatureBrocade) RETURN n LIMIT 25',
+      {
+        selectedIchTypes: selectedIchTypes.length > 0 ? selectedIchTypes : ichTypes.flatMap(({types}) => types),
+        keyword
+      },
+      {database: 'neo4j'}
+    )
+
+    // console.log('query res', records.values(), records, summary, keys);
+
+    return records.map((record: any) => ({p: record._fields[0]}))
+  }
+
+  useEffect(() => {
+    // doQuery().then((res) => {setRecords(res)});
+    window.onresize = () => {
+      setRecords(r => [...r])
+    }
+    return () => {
+      window.onresize = null;
+    }
+  }, [])
+  // const records1 = await doQuery();
+
+  let nodes: Nodes = {
+    layerNum: 6,
+    ichNodes: [],
+    textNodes: [],
+    typeNodes: [],
+    subSubjectNodes: [[], [], []],
+    subjectNodes: [],
+  };
+
+  const [paths, setPaths] = useState<Path[]>([]);
+
+  useEffect(() => {
+    const tempPaths: Path[] = [];
+    records.forEach((pathObj) => {
+      let segments = pathObj.p.segments;
+
+      const path: Path = [undefined, undefined, undefined, undefined, undefined, undefined];
+      let subSubjectLayer = 0;
+
+      const pathSubSubjects: BaseNode[] = [];
+      segments.forEach((segment, index) => {
+        const start = segment.start;
+
+        type segEndWithPath = typeof segment.end & { path: Path };
+        const end: segEndWithPath = segment.end as segEndWithPath;
+        end.path = path;
+
+        if (
+          start.labels.includes(NodeType.ICH_BROCADE) ||
+          start.labels.includes(NodeType.ICH_EMBROIDERY) ||
+          start.labels.includes(NodeType.ICH_NYP)
+        ) {
+          // @ts-ignore
+          end.ichCate = start;
+          // @ts-ignore
+          path[0] = end;
+        } else if (end.labels.includes(NodeType.TYPE)) {
+          path[1] = end;
+        } else if (end.labels.includes(NodeType.SUB_SUBJECT)) {
+          pathSubSubjects.push(end);
+        } else if (end.labels.includes(NodeType.SUBJECT)) {
+          pathSubSubjects.forEach((item, index) => path[2 + index + (3 - pathSubSubjects.length)] = item);
+          path[5] = end;
+        }
+      })
+      tempPaths.push(path);
+    })
+    setPaths(tempPaths);
+  }, [records]);
+
+  // @ts-ignore
+  // console.log(groupBy(nodes.subjectNodes, (node) => node.properties.rdf__value.trim()));
+
+  const form = useForm()
+
+  const [highlightingPaths, setHighlightingPaths] = useState<Path[]>([])
+
+  function emphasizeKeyword(text: string, keyword: string) {
+    if (!text || !keyword) return text;
+    return text.replace(new RegExp(`(${keyword})`, 'g'), '<span class="bg-yellow-200">$1</span>')
+  }
+
+  const makeNodeCard = useCallback((layer: number, node: BaseNode | undefined, index?: number) => {
+    switch (layer) {
+      case 0:
+        return (
+          <div className={'border rounded-xl py-3 px-4 shadow'}>
+            <p className={'text-sm text-gray-400'}>文本 {(index ?? 0) + 1}/{highlightingPaths.length}</p>
+            <p
+              className={'py-1 text-sm text-gray-600'}
+              dangerouslySetInnerHTML={{__html: emphasizeKeyword(node?.properties.ns2__description, keyword)}}
             />
-          </a>
+            <div className={'py-1'}>
+              <p className={'text-xs text-gray-400'}>技术词汇</p>
+              <div
+                className={'flex flex-wrap gap-1 py-1 text-sm text-gray-600'}>
+                {
+                  node?.properties.ns0__artisticFeaturelexic && node?.properties.ns0__artisticFeaturelexic?.filter((item: string) => item).map((word: string) => (
+                    <div
+                      key={word}
+                      className={'rounded-3xl px-2 py-1 border'}
+                      dangerouslySetInnerHTML={{__html: emphasizeKeyword(word, keyword)}}
+                    />
+                  ))
+                }</div>
+            </div>
+            <div className={'py-1'}>
+              <p className={'text-xs text-gray-400'}>技术词汇密度</p>
+              <p
+                className={'py-1 text-sm text-gray-600'}>{node?.properties.ns0__artisticFeaturelexicalDensity ?? '--'}</p>
+            </div>
+          </div>
+        );
+      case 1:
+      case 2:
+      case 3:
+      case 4:
+      case 5:
+        let val = node?.properties.rdf__value;
+        return (
+          <div className={'border rounded-xl py-3 px-4 shadow ' + (val ? '' : 'opacity-30')}>
+            <p className={'text-sm text-gray-400'}>{layerName[layer]}</p>
+            <p
+              className={'py-1 text-sm text-gray-600'}
+              dangerouslySetInnerHTML={{__html: emphasizeKeyword(val, keyword) ?? '--'}}
+            />
+          </div>
+        )
+      default:
+        return null;
+    }
+  }, [highlightingPaths.length, keyword])
+
+  const [layerOrder, setLayerOrder] = useState(
+    initialLayerOrder.map(layer => ({id: layer + 1}))
+  );
+
+  return (
+    <main id='main-container' className="flex h-screen items-center justify-stretch">
+      <div className='card h-full flex-1 p-4 min-w-20'>
+        <h2 className="my-2 font-bold text-2xl text-gray-700">探索</h2>
+        <Form {...form}>
+          <FormField
+            control={form.control}
+            name='form'
+            render={({field}) => (
+              <FormItem>
+                <FormLabel>非遗类别</FormLabel>
+                <FormControl>
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button variant="outline" className='w-full gap-2 justify-between px-3'>
+                        <div className={'flex-1 text-ellipsis overflow-hidden text-left'}>
+                          {
+                            selectedIchTypes.length > 0 ? selectedIchTypes.join(', ') :
+                              <span className='font-normal opacity-[0.63]'>筛选非遗类别</span>
+                          }
+                        </div>
+                        <ChevronsUpDown size={14} className={'opacity-[0.63] flex-0'}/>
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align='start' className={'w-36'}>
+                      {
+                        ichTypes.map(({cate, types}, index) => (
+                          <Fragment key={cate}>
+                            <DropdownMenuLabel>{cate}</DropdownMenuLabel>
+                            {
+                              types.map((type) => (
+                                <DropdownMenuCheckboxItem
+                                  key={type}
+                                  checked={selectedIchTypes.includes(type)}
+                                  onCheckedChange={(checked) => {
+                                    if (checked) {
+                                      setSelectedIchTypes(types => [...types, type])
+                                    } else {
+                                      setSelectedIchTypes(types => types.filter(t => t !== type))
+                                    }
+                                  }}
+                                >
+                                  {type}
+                                </DropdownMenuCheckboxItem>
+                              ))
+                            }
+                            {
+                              index < ichTypes.length - 1 && <DropdownMenuSeparator/>
+                            }
+                          </Fragment>
+                        ))
+                      }
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                </FormControl>
+                <FormDescription>
+                  筛选文本所属的非遗类别
+                </FormDescription>
+                <FormMessage/>
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name='form'
+            render={({field}) => (
+              <FormItem className={'mt-2'}>
+                <FormLabel>关键字</FormLabel>
+                <FormControl>
+                  <Input placeholder="搜索关键字" {...field} value={keyword}
+                         onChange={e => setKeyword(e.target.value)}/>
+                </FormControl>
+              </FormItem>
+            )}
+          />
+          <Button size='sm' className='mt-4' type="submit" onClick={() => {
+            doQuery().then((res) => {
+              setRecords(res)
+            });
+          }}>搜索</Button>
+        </Form>
+        <Separator className='my-6'/>
+        <h2 className="my-2 font-bold text-2xl text-gray-700">排序层级</h2>
+        <div className='flex flex-col gap-2 justify-stretch'>
+          <SortableList
+            items={layerOrder}
+            onChange={setLayerOrder}
+            renderItem={(item) => (
+              <SortableList.Item id={item.id}>
+                {layerName[item.id - 1]}
+                <SortableList.DragHandle/>
+              </SortableList.Item>
+            )}
+          />
         </div>
       </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className='card h-full svg_con flex-0'>
+        <Graph paths={paths} layerOrder={layerOrder.map(item => item.id - 1)} onOverPath={setHighlightingPaths}/>
       </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className='card h-full w-1/4 flex flex-col'>
+        <h2 className="my-2 font-bold text-2xl text-gray-700 p-4 pb-0 flex-grow-0 flex-shrink-0">文本节点</h2>
+        <Carousel className={'relative w-full flex-1 min-h-20 flex'}>
+          <CarouselContent className='h-full'>
+            {
+              highlightingPaths.map((path, index) => {
+                return (
+                  <CarouselItem key={index} className='overflow-auto h-full pb-4'>
+                    <div className={'flex w-full gap-2 flex-col px-4'}>
+                      {layerOrder.map((layer) => makeNodeCard(layer.id - 1, path[layer.id - 1], index))}
+                    </div>
+                  </CarouselItem>
+                )
+              })
+            }
+          </CarouselContent>
+          <CarouselPrevious className={'absolute top-0 left-full'}
+                            style={{transform: 'translate(calc(-250% - 8px), calc(-100% - 6px))'}}/>
+          <CarouselNext className={'absolute top-0 right-0'} style={{transform: 'translate(-50%, calc(-100% - 6px))'}}/>
+        </Carousel>
       </div>
     </main>
   );

@@ -1,0 +1,2265 @@
+﻿[
+  {
+    "p": {
+      "start": {
+        "identity": 51,
+        "labels": [
+          "Resource",
+          "ns0__artisticFeatureBrocade"
+        ],
+        "properties": {
+          "ns1__name": "云锦",
+          "uri": "file:///artisticFeatureYSTZ_Brocade_133_126"
+        },
+        "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:51"
+      },
+      "end": {
+        "identity": 264,
+        "labels": [
+          "Resource",
+          "ns0__artisticFeatureSubject"
+        ],
+        "properties": {
+          "uri": "file:///artisticFeatureYSTZ_category_130_003",
+          "rdf__value": "艺术特征"
+        },
+        "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:264"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 51,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureBrocade"
+            ],
+            "properties": {
+              "ns1__name": "云锦",
+              "uri": "file:///artisticFeatureYSTZ_Brocade_133_126"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:51"
+          },
+          "relationship": {
+            "identity": 772,
+            "start": 51,
+            "end": 2426,
+            "type": "ns0__artisticFeatureartisticFeature",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:772",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:51",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2426"
+          },
+          "end": {
+            "identity": 2426,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureDescription"
+            ],
+            "properties": {
+              "ns0__artisticFeaturelexicalDensity": "0.287671232876712",
+              "uri": "file:///artisticFeatureYSTZ_description_130",
+              "ns0__artisticFeaturelexic": [
+                "已经",
+                "汉代",
+                "",
+                "形象",
+                "鳄鱼",
+                "明清两代",
+                "早期",
+                "历朝历代",
+                "中国",
+                "图腾",
+                "唐宋",
+                "性质",
+                "现在",
+                "象征",
+                "五千多年",
+                "部落",
+                "动物",
+                "帝王"
+              ],
+              "ns2__description": "中国的龙，是个虚拟的特殊动物，从最早的意义讲，可能带有原始部落图腾的性质。传至历朝历代，又成了帝王的象征。龙的形象,五千多年来变化很大，早期的龙有的像蛇，有的像马，还有的像猪、像鳄鱼等，直到汉代还是差异很大。龙的形象在唐宋时开始定形，我们现在看到的，主要是明清两代已经定形的，差不多一个样了。"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2426"
+          }
+        },
+        {
+          "start": {
+            "identity": 2426,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureDescription"
+            ],
+            "properties": {
+              "ns0__artisticFeaturelexicalDensity": "0.287671232876712",
+              "uri": "file:///artisticFeatureYSTZ_description_130",
+              "ns0__artisticFeaturelexic": [
+                "已经",
+                "汉代",
+                "",
+                "形象",
+                "鳄鱼",
+                "明清两代",
+                "早期",
+                "历朝历代",
+                "中国",
+                "图腾",
+                "唐宋",
+                "性质",
+                "现在",
+                "象征",
+                "五千多年",
+                "部落",
+                "动物",
+                "帝王"
+              ],
+              "ns2__description": "中国的龙，是个虚拟的特殊动物，从最早的意义讲，可能带有原始部落图腾的性质。传至历朝历代，又成了帝王的象征。龙的形象,五千多年来变化很大，早期的龙有的像蛇，有的像马，还有的像猪、像鳄鱼等，直到汉代还是差异很大。龙的形象在唐宋时开始定形，我们现在看到的，主要是明清两代已经定形的，差不多一个样了。"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2426"
+          },
+          "relationship": {
+            "identity": 4251,
+            "start": 2426,
+            "end": 262,
+            "type": "ns0__artisticFeatureitemName",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:4251",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2426",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:262"
+          },
+          "end": {
+            "identity": 262,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureFeatureType"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_130_001",
+              "rdf__value": "概述"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:262"
+          }
+        },
+        {
+          "start": {
+            "identity": 262,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureFeatureType"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_130_001",
+              "rdf__value": "概述"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:262"
+          },
+          "relationship": {
+            "identity": 4863,
+            "start": 262,
+            "end": 263,
+            "type": "skos__broader",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:4863",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:262",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:263"
+          },
+          "end": {
+            "identity": 263,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureSubSubject"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_130_002",
+              "rdf__value": "龙"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:263"
+          }
+        },
+        {
+          "start": {
+            "identity": 263,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureSubSubject"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_130_002",
+              "rdf__value": "龙"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:263"
+          },
+          "relationship": {
+            "identity": 567,
+            "start": 263,
+            "end": 264,
+            "type": "skos__broader",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:567",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:263",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:264"
+          },
+          "end": {
+            "identity": 264,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureSubject"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_130_003",
+              "rdf__value": "艺术特征"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:264"
+          }
+        }
+      ],
+      "length": 4.0
+    }
+  },
+  {
+    "p": {
+      "start": {
+        "identity": 51,
+        "labels": [
+          "Resource",
+          "ns0__artisticFeatureBrocade"
+        ],
+        "properties": {
+          "ns1__name": "云锦",
+          "uri": "file:///artisticFeatureYSTZ_Brocade_133_126"
+        },
+        "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:51"
+      },
+      "end": {
+        "identity": 309,
+        "labels": [
+          "Resource",
+          "ns0__artisticFeatureSubject"
+        ],
+        "properties": {
+          "uri": "file:///artisticFeatureYSTZ_category_247_002",
+          "rdf__value": "艺术特征"
+        },
+        "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:309"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 51,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureBrocade"
+            ],
+            "properties": {
+              "ns1__name": "云锦",
+              "uri": "file:///artisticFeatureYSTZ_Brocade_133_126"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:51"
+          },
+          "relationship": {
+            "identity": 789,
+            "start": 51,
+            "end": 2670,
+            "type": "ns0__artisticFeatureartisticFeature",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:789",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:51",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2670"
+          },
+          "end": {
+            "identity": 2670,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureDescription"
+            ],
+            "properties": {
+              "ns0__artisticFeaturelexicalDensity": "0.244252873563218",
+              "uri": "file:///artisticFeatureYSTZ_description_247",
+              "ns0__artisticFeaturelexic": [
+                "龙袍",
+                "寺庙",
+                "片金",
+                "圆金线",
+                "织金妆花缎",
+                "价值",
+                "欣赏",
+                "妆织",
+                "宋锦",
+                "织物",
+                "金属色",
+                "风格",
+                "扁金线",
+                "北方",
+                "宫廷",
+                "艺术",
+                "建筑",
+                "配色",
+                "多数",
+                "妆花",
+                "图案",
+                "金线",
+                "扁金",
+                "轮廓线",
+                "其他",
+                "同时",
+                "花纹",
+                "彩绘",
+                "装饰",
+                "蜀锦",
+                "银线",
+                "设色",
+                "纹刀",
+                "挖花盘织",
+                "色彩",
+                "龙身",
+                "显金",
+                "云锦"
+              ],
+              "ns2__description": "（4）片金绞边。片金绞边又称扁金包（宝）边。在云锦妆花图案的配色中，大量地使用了金、银线，其中片金线一般用于花纹的轮廓线，圆金线常用于挖花盘织。一般来讲，花纹轮廓线布满幅面，正好适合定长的片金用纹刀抽织。.圆金线价值较高，常用于重要部位的妆织显金，如龙袍的龙身常用圆金线盘织而成，其他花纹处用扁金线勾边，因此云锦妆花锻绝大多数是织金妆花缎。总体来看，妆花是离不开金线的。在欣赏织物时首先看到的是金、银两种色，然后才是其他色，金属色可以与任何色彩相调和。金、银在设色对比强烈的云锦图案中，不仅起着调和与统一全局色彩的作用，同时还使整个织物增添了辉煌的富丽感，使之更加绚丽悦目。这种金彩交辉、富丽堂皇的色彩装饰效果，是云锦的艺术特色之一，比宋锦、蜀锦用金多，与北方宫廷寺庙等建筑彩绘的艺术风格相接近。"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2670"
+          }
+        },
+        {
+          "start": {
+            "identity": 2670,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureDescription"
+            ],
+            "properties": {
+              "ns0__artisticFeaturelexicalDensity": "0.244252873563218",
+              "uri": "file:///artisticFeatureYSTZ_description_247",
+              "ns0__artisticFeaturelexic": [
+                "龙袍",
+                "寺庙",
+                "片金",
+                "圆金线",
+                "织金妆花缎",
+                "价值",
+                "欣赏",
+                "妆织",
+                "宋锦",
+                "织物",
+                "金属色",
+                "风格",
+                "扁金线",
+                "北方",
+                "宫廷",
+                "艺术",
+                "建筑",
+                "配色",
+                "多数",
+                "妆花",
+                "图案",
+                "金线",
+                "扁金",
+                "轮廓线",
+                "其他",
+                "同时",
+                "花纹",
+                "彩绘",
+                "装饰",
+                "蜀锦",
+                "银线",
+                "设色",
+                "纹刀",
+                "挖花盘织",
+                "色彩",
+                "龙身",
+                "显金",
+                "云锦"
+              ],
+              "ns2__description": "（4）片金绞边。片金绞边又称扁金包（宝）边。在云锦妆花图案的配色中，大量地使用了金、银线，其中片金线一般用于花纹的轮廓线，圆金线常用于挖花盘织。一般来讲，花纹轮廓线布满幅面，正好适合定长的片金用纹刀抽织。.圆金线价值较高，常用于重要部位的妆织显金，如龙袍的龙身常用圆金线盘织而成，其他花纹处用扁金线勾边，因此云锦妆花锻绝大多数是织金妆花缎。总体来看，妆花是离不开金线的。在欣赏织物时首先看到的是金、银两种色，然后才是其他色，金属色可以与任何色彩相调和。金、银在设色对比强烈的云锦图案中，不仅起着调和与统一全局色彩的作用，同时还使整个织物增添了辉煌的富丽感，使之更加绚丽悦目。这种金彩交辉、富丽堂皇的色彩装饰效果，是云锦的艺术特色之一，比宋锦、蜀锦用金多，与北方宫廷寺庙等建筑彩绘的艺术风格相接近。"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2670"
+          },
+          "relationship": {
+            "identity": 1408,
+            "start": 2670,
+            "end": 308,
+            "type": "ns0__artisticFeatureitemName",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:1408",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2670",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:308"
+          },
+          "end": {
+            "identity": 308,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureFeatureType"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_247_001",
+              "rdf__value": "概念定义"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:308"
+          }
+        },
+        {
+          "start": {
+            "identity": 308,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureFeatureType"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_247_001",
+              "rdf__value": "概念定义"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:308"
+          },
+          "relationship": {
+            "identity": 1595,
+            "start": 308,
+            "end": 309,
+            "type": "skos__broader",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:1595",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:308",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:309"
+          },
+          "end": {
+            "identity": 309,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureSubject"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_247_002",
+              "rdf__value": "艺术特征"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:309"
+          }
+        }
+      ],
+      "length": 3.0
+    }
+  },
+  {
+    "p": {
+      "start": {
+        "identity": 51,
+        "labels": [
+          "Resource",
+          "ns0__artisticFeatureBrocade"
+        ],
+        "properties": {
+          "ns1__name": "云锦",
+          "uri": "file:///artisticFeatureYSTZ_Brocade_133_126"
+        },
+        "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:51"
+      },
+      "end": {
+        "identity": 519,
+        "labels": [
+          "Resource",
+          "ns0__artisticFeatureSubject"
+        ],
+        "properties": {
+          "uri": "file:///artisticFeatureYSTZ_category_10_002",
+          "rdf__value": "艺术特征"
+        },
+        "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:519"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 51,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureBrocade"
+            ],
+            "properties": {
+              "ns1__name": "云锦",
+              "uri": "file:///artisticFeatureYSTZ_Brocade_133_126"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:51"
+          },
+          "relationship": {
+            "identity": 710,
+            "start": 51,
+            "end": 1386,
+            "type": "ns0__artisticFeatureartisticFeature",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:710",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:51",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:1386"
+          },
+          "end": {
+            "identity": 1386,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureDescription"
+            ],
+            "properties": {
+              "ns0__artisticFeaturelexicalDensity": "0.315068493150685",
+              "uri": "file:///artisticFeatureYSTZ_description_10",
+              "ns0__artisticFeaturelexic": [
+                "",
+                "价值",
+                "宋锦",
+                "织物",
+                "风格",
+                "特点",
+                "款式",
+                "南京",
+                "艺术",
+                "配色",
+                "图案",
+                "性能",
+                "继承",
+                "织造",
+                "花纹",
+                "工艺",
+                "装饰",
+                "明代",
+                "色彩",
+                "唐代",
+                "纹样",
+                "文化",
+                "云锦"
+              ],
+              "ns2__description": "云锦图案继承了唐代花纹造型的敦厚饱满、宋锦构图的秀美雅致、明代纹样变化的概括简练，结合织物材料的性能、工艺制作的特点，以及实用的具体要求等，融合形成了云锦图案特有的装饰效果和独特的艺术风格。织造文化中的艺术，是通过纹样、色彩、款式、风格来体现的。南京云锦的文化艺术价值主要反映在图案和配色上。"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:1386"
+          }
+        },
+        {
+          "start": {
+            "identity": 1386,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureDescription"
+            ],
+            "properties": {
+              "ns0__artisticFeaturelexicalDensity": "0.315068493150685",
+              "uri": "file:///artisticFeatureYSTZ_description_10",
+              "ns0__artisticFeaturelexic": [
+                "",
+                "价值",
+                "宋锦",
+                "织物",
+                "风格",
+                "特点",
+                "款式",
+                "南京",
+                "艺术",
+                "配色",
+                "图案",
+                "性能",
+                "继承",
+                "织造",
+                "花纹",
+                "工艺",
+                "装饰",
+                "明代",
+                "色彩",
+                "唐代",
+                "纹样",
+                "文化",
+                "云锦"
+              ],
+              "ns2__description": "云锦图案继承了唐代花纹造型的敦厚饱满、宋锦构图的秀美雅致、明代纹样变化的概括简练，结合织物材料的性能、工艺制作的特点，以及实用的具体要求等，融合形成了云锦图案特有的装饰效果和独特的艺术风格。织造文化中的艺术，是通过纹样、色彩、款式、风格来体现的。南京云锦的文化艺术价值主要反映在图案和配色上。"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:1386"
+          },
+          "relationship": {
+            "identity": 4558,
+            "start": 1386,
+            "end": 535,
+            "type": "ns0__artisticFeatureitemName",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:4558",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:1386",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:535"
+          },
+          "end": {
+            "identity": 535,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureFeatureType"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_10_001",
+              "rdf__value": "概述"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:535"
+          }
+        },
+        {
+          "start": {
+            "identity": 535,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureFeatureType"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_10_001",
+              "rdf__value": "概述"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:535"
+          },
+          "relationship": {
+            "identity": 4005,
+            "start": 535,
+            "end": 519,
+            "type": "skos__broader",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:4005",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:535",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:519"
+          },
+          "end": {
+            "identity": 519,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureSubject"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_10_002",
+              "rdf__value": "艺术特征"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:519"
+          }
+        }
+      ],
+      "length": 3.0
+    }
+  },
+  {
+    "p": {
+      "start": {
+        "identity": 51,
+        "labels": [
+          "Resource",
+          "ns0__artisticFeatureBrocade"
+        ],
+        "properties": {
+          "ns1__name": "云锦",
+          "uri": "file:///artisticFeatureYSTZ_Brocade_133_126"
+        },
+        "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:51"
+      },
+      "end": {
+        "identity": 792,
+        "labels": [
+          "Resource",
+          "ns0__artisticFeatureSubject"
+        ],
+        "properties": {
+          "uri": "file:///artisticFeatureYSTZ_category_121_004",
+          "rdf__value": "艺术特征"
+        },
+        "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:792"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 51,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureBrocade"
+            ],
+            "properties": {
+              "ns1__name": "云锦",
+              "uri": "file:///artisticFeatureYSTZ_Brocade_133_126"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:51"
+          },
+          "relationship": {
+            "identity": 755,
+            "start": 51,
+            "end": 3337,
+            "type": "ns0__artisticFeatureartisticFeature",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:755",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:51",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:3337"
+          },
+          "end": {
+            "identity": 3337,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureDescription"
+            ],
+            "properties": {
+              "ns0__artisticFeaturelexicalDensity": "0.224761904761905",
+              "uri": "file:///artisticFeatureYSTZ_description_121",
+              "ns0__artisticFeaturelexic": [
+                "",
+                "谐音",
+                "枝条",
+                "格式",
+                "莲蓬",
+                "内容",
+                "蔓藤",
+                "佛教",
+                "组合",
+                "形式",
+                "一直",
+                "吉祥",
+                "创造",
+                "穿枝花",
+                "壁画",
+                "荷花",
+                "锦缎",
+                "木本",
+                "汉字",
+                "艺术",
+                "连生贵子",
+                "建筑",
+                "莲座",
+                "吉祥语",
+                "图案",
+                "缠枝莲",
+                "花朵",
+                "牡丹",
+                "构成",
+                "和气致祥",
+                "理想",
+                "花边",
+                "花卉",
+                "手法",
+                "连年有余",
+                "织造",
+                "两类",
+                "敦煌",
+                "陶瓷",
+                "两个",
+                "思维",
+                "缠枝",
+                "装饰",
+                "吉样",
+                "植物",
+                "创意",
+                "莲花",
+                "中国",
+                "三级",
+                "唐宋",
+                "和合二仙",
+                "象征",
+                "缠枝花"
+              ],
+              "ns2__description": "佛教崇尚莲花，以为圣洁，有莲座、莲台、莲经等。在中国人的心目中，由于汉字的谐音，“莲”与“荷”，是两个好字眼。“莲”与“连”谐音，可组成“连年有余”、“连生贵子”、“连升三级”等吉祥语和吉祥图；“荷”与“和”谐音，成为“和合二仙”之一，手中持一枝荷花，象征“和气致祥”。民间图案画莲花（荷花），是透过水和泥的，从花、蕾、茎、叶和莲蓬，一直画到水中的茎和泥中的根与藕。由内容到形式，完全而圆满，实在是难得的吉样艺术。花卉的枝干有两类，一类是木本的老干，即使抽出的新枝也是硬的；另一种是草本的枝条，容易弯曲,蔓藤植物尤其如此。在装饰图案中，如何将无数的花朵组合在一起，仅靠枝干的自然形态是不可能的。于是,聪明人观察到软枝条的弯曲，使之有规律的“纠缠”在一起，“穿连”在一起，创造了“缠枝花”。缠枝花又叫“穿枝花”，是艺术思维的一种高创意，它按照人的理想将不同的花卉组合在一起。在图案学上称作“波线连续”，既可以构成无限长的装饰带（如花边），又能够组成大块面的锦缎，如“缠枝莲”、“缠枝牡丹”等。这种艺术的格式与手法，虽然最适宜于锦缎，但不限于织造。唐宋以来，被广泛用于陶瓷和建筑彩画上。在敦煌壁画中，以缠枝花的装饰宽带分割壁面，有的长达几十米，蔚为壮观。"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:3337"
+          }
+        },
+        {
+          "start": {
+            "identity": 3337,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureDescription"
+            ],
+            "properties": {
+              "ns0__artisticFeaturelexicalDensity": "0.224761904761905",
+              "uri": "file:///artisticFeatureYSTZ_description_121",
+              "ns0__artisticFeaturelexic": [
+                "",
+                "谐音",
+                "枝条",
+                "格式",
+                "莲蓬",
+                "内容",
+                "蔓藤",
+                "佛教",
+                "组合",
+                "形式",
+                "一直",
+                "吉祥",
+                "创造",
+                "穿枝花",
+                "壁画",
+                "荷花",
+                "锦缎",
+                "木本",
+                "汉字",
+                "艺术",
+                "连生贵子",
+                "建筑",
+                "莲座",
+                "吉祥语",
+                "图案",
+                "缠枝莲",
+                "花朵",
+                "牡丹",
+                "构成",
+                "和气致祥",
+                "理想",
+                "花边",
+                "花卉",
+                "手法",
+                "连年有余",
+                "织造",
+                "两类",
+                "敦煌",
+                "陶瓷",
+                "两个",
+                "思维",
+                "缠枝",
+                "装饰",
+                "吉样",
+                "植物",
+                "创意",
+                "莲花",
+                "中国",
+                "三级",
+                "唐宋",
+                "和合二仙",
+                "象征",
+                "缠枝花"
+              ],
+              "ns2__description": "佛教崇尚莲花，以为圣洁，有莲座、莲台、莲经等。在中国人的心目中，由于汉字的谐音，“莲”与“荷”，是两个好字眼。“莲”与“连”谐音，可组成“连年有余”、“连生贵子”、“连升三级”等吉祥语和吉祥图；“荷”与“和”谐音，成为“和合二仙”之一，手中持一枝荷花，象征“和气致祥”。民间图案画莲花（荷花），是透过水和泥的，从花、蕾、茎、叶和莲蓬，一直画到水中的茎和泥中的根与藕。由内容到形式，完全而圆满，实在是难得的吉样艺术。花卉的枝干有两类，一类是木本的老干，即使抽出的新枝也是硬的；另一种是草本的枝条，容易弯曲,蔓藤植物尤其如此。在装饰图案中，如何将无数的花朵组合在一起，仅靠枝干的自然形态是不可能的。于是,聪明人观察到软枝条的弯曲，使之有规律的“纠缠”在一起，“穿连”在一起，创造了“缠枝花”。缠枝花又叫“穿枝花”，是艺术思维的一种高创意，它按照人的理想将不同的花卉组合在一起。在图案学上称作“波线连续”，既可以构成无限长的装饰带（如花边），又能够组成大块面的锦缎，如“缠枝莲”、“缠枝牡丹”等。这种艺术的格式与手法，虽然最适宜于锦缎，但不限于织造。唐宋以来，被广泛用于陶瓷和建筑彩画上。在敦煌壁画中，以缠枝花的装饰宽带分割壁面，有的长达几十米，蔚为壮观。"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:3337"
+          },
+          "relationship": {
+            "identity": 4649,
+            "start": 3337,
+            "end": 809,
+            "type": "ns0__artisticFeatureitemName",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:4649",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:3337",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:809"
+          },
+          "end": {
+            "identity": 809,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureFeatureType"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_121_001",
+              "rdf__value": "概述"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:809"
+          }
+        },
+        {
+          "start": {
+            "identity": 809,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureFeatureType"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_121_001",
+              "rdf__value": "概述"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:809"
+          },
+          "relationship": {
+            "identity": 3702,
+            "start": 809,
+            "end": 805,
+            "type": "skos__broader",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:3702",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:809",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:805"
+          },
+          "end": {
+            "identity": 805,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureSubSubject"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_121_002",
+              "rdf__value": "莲花"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:805"
+          }
+        },
+        {
+          "start": {
+            "identity": 805,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureSubSubject"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_121_002",
+              "rdf__value": "莲花"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:805"
+          },
+          "relationship": {
+            "identity": 4889,
+            "start": 805,
+            "end": 803,
+            "type": "skos__broader",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:4889",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:805",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:803"
+          },
+          "end": {
+            "identity": 803,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureSubSubject"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_121_003",
+              "rdf__value": "纹样"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:803"
+          }
+        },
+        {
+          "start": {
+            "identity": 803,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureSubSubject"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_121_003",
+              "rdf__value": "纹样"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:803"
+          },
+          "relationship": {
+            "identity": 582,
+            "start": 803,
+            "end": 792,
+            "type": "skos__broader",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:582",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:803",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:792"
+          },
+          "end": {
+            "identity": 792,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureSubject"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_121_004",
+              "rdf__value": "艺术特征"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:792"
+          }
+        }
+      ],
+      "length": 5.0
+    }
+  },
+  {
+    "p": {
+      "start": {
+        "identity": 51,
+        "labels": [
+          "Resource",
+          "ns0__artisticFeatureBrocade"
+        ],
+        "properties": {
+          "ns1__name": "云锦",
+          "uri": "file:///artisticFeatureYSTZ_Brocade_133_126"
+        },
+        "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:51"
+      },
+      "end": {
+        "identity": 834,
+        "labels": [
+          "Resource",
+          "ns0__artisticFeatureSubject"
+        ],
+        "properties": {
+          "uri": "file:///artisticFeatureYSTZ_category_148_002",
+          "rdf__value": "艺术特征"
+        },
+        "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:834"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 51,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureBrocade"
+            ],
+            "properties": {
+              "ns1__name": "云锦",
+              "uri": "file:///artisticFeatureYSTZ_Brocade_133_126"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:51"
+          },
+          "relationship": {
+            "identity": 689,
+            "start": 51,
+            "end": 2401,
+            "type": "ns0__artisticFeatureartisticFeature",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:689",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:51",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2401"
+          },
+          "end": {
+            "identity": 2401,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureDescription"
+            ],
+            "properties": {
+              "ns0__artisticFeaturelexicalDensity": "0.2",
+              "uri": "file:///artisticFeatureYSTZ_description_148",
+              "ns0__artisticFeaturelexic": [
+                "传统",
+                "元代",
+                "特色",
+                "风格",
+                "织锦",
+                "金彩",
+                "方法",
+                "配色",
+                "用金",
+                "健康",
+                "彩锦",
+                "文静",
+                "装饰",
+                "两种",
+                "色彩",
+                "唐代",
+                "淡雅",
+                "宋代",
+                "两代"
+              ],
+              "ns2__description": "在色彩装饰上，各个时代的彩锦，有其各自的风格和特色。如唐代的彩锦，配色浓丽而典雅，具有一种明朗而健康的气息。宋代的彩锦，配色淡雅而文静，给人以秀美而清新的享受。元代的织锦，则由传统的注重配色转变为崇尚用金作主体表现，这在我国锦缎装饰上是一个极为突出的转变。明、清两代的织锦,在元代盛行用金风气的影响下，既重视配色，又考究用金，两种装饰方法被兼收并蓄，形成金彩并重的锦缎装饰新风貌。"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2401"
+          }
+        },
+        {
+          "start": {
+            "identity": 2401,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureDescription"
+            ],
+            "properties": {
+              "ns0__artisticFeaturelexicalDensity": "0.2",
+              "uri": "file:///artisticFeatureYSTZ_description_148",
+              "ns0__artisticFeaturelexic": [
+                "传统",
+                "元代",
+                "特色",
+                "风格",
+                "织锦",
+                "金彩",
+                "方法",
+                "配色",
+                "用金",
+                "健康",
+                "彩锦",
+                "文静",
+                "装饰",
+                "两种",
+                "色彩",
+                "唐代",
+                "淡雅",
+                "宋代",
+                "两代"
+              ],
+              "ns2__description": "在色彩装饰上，各个时代的彩锦，有其各自的风格和特色。如唐代的彩锦，配色浓丽而典雅，具有一种明朗而健康的气息。宋代的彩锦，配色淡雅而文静，给人以秀美而清新的享受。元代的织锦，则由传统的注重配色转变为崇尚用金作主体表现，这在我国锦缎装饰上是一个极为突出的转变。明、清两代的织锦,在元代盛行用金风气的影响下，既重视配色，又考究用金，两种装饰方法被兼收并蓄，形成金彩并重的锦缎装饰新风貌。"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2401"
+          },
+          "relationship": {
+            "identity": 2208,
+            "start": 2401,
+            "end": 832,
+            "type": "ns0__artisticFeatureitemName",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2208",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2401",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:832"
+          },
+          "end": {
+            "identity": 832,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureFeatureType"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_148_001",
+              "rdf__value": "概述"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:832"
+          }
+        },
+        {
+          "start": {
+            "identity": 832,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureFeatureType"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_148_001",
+              "rdf__value": "概述"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:832"
+          },
+          "relationship": {
+            "identity": 3044,
+            "start": 832,
+            "end": 834,
+            "type": "skos__broader",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:3044",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:832",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:834"
+          },
+          "end": {
+            "identity": 834,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureSubject"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_148_002",
+              "rdf__value": "艺术特征"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:834"
+          }
+        }
+      ],
+      "length": 3.0
+    }
+  },
+  {
+    "p": {
+      "start": {
+        "identity": 51,
+        "labels": [
+          "Resource",
+          "ns0__artisticFeatureBrocade"
+        ],
+        "properties": {
+          "ns1__name": "云锦",
+          "uri": "file:///artisticFeatureYSTZ_Brocade_133_126"
+        },
+        "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:51"
+      },
+      "end": {
+        "identity": 2254,
+        "labels": [
+          "Resource",
+          "ns0__artisticFeatureSubject"
+        ],
+        "properties": {
+          "uri": "file:///artisticFeatureYSTZ_category_262_003",
+          "rdf__value": "艺术特征"
+        },
+        "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2254"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 51,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureBrocade"
+            ],
+            "properties": {
+              "ns1__name": "云锦",
+              "uri": "file:///artisticFeatureYSTZ_Brocade_133_126"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:51"
+          },
+          "relationship": {
+            "identity": 736,
+            "start": 51,
+            "end": 1718,
+            "type": "ns0__artisticFeatureartisticFeature",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:736",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:51",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:1718"
+          },
+          "end": {
+            "identity": 1718,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureDescription"
+            ],
+            "properties": {
+              "ns0__artisticFeaturelexicalDensity": "0.307116104868914",
+              "uri": "file:///artisticFeatureYSTZ_description_262",
+              "ns0__artisticFeaturelexic": [
+                "厘米",
+                "",
+                "情况",
+                "纬线",
+                "花型",
+                "两组",
+                "妆花绸",
+                "妆织",
+                "织彩",
+                "织物",
+                "品种",
+                "特色",
+                "地部",
+                "平纹",
+                "北京故宫",
+                "串枝",
+                "纬浮花",
+                "纬重平组织",
+                "妆花",
+                "长度",
+                "图案",
+                "交织",
+                "纬线共口",
+                "牡丹",
+                "固结点",
+                "产品",
+                "织造",
+                "一组",
+                "彩纬",
+                "暗花",
+                "工艺",
+                "牢度",
+                "设计",
+                "宋代",
+                "云锦",
+                "难度"
+              ],
+              "ns2__description": "云锦妆花中平纹类的衍生产品很有特色，归于纬重平品种的织物地部有一粗一细两组纬线共口组成纬重平组织。如北京故宫保存的“月白地织彩串枝牡丹纹妆花绸主要在宋代，”就是这样的品种，在地部由于一粗一细两根纬线共口，合并后较粗，地部呈现横凸纹。在暗花处，其中一组较细的纬线不参加交织而浮于织物面，最大浮长可达一厘米。而彩纬妆织时与暗花一样也无固结点，考虑到纬浮花的牢度，最大浮长也控制在一厘米范围内。这类品种的难度不是体现在织造工艺方面，而是在图案设计时就要安排好花型与每色妆织的宽度及暗花纬浮长的宽度，在浮长长度受到限制的情况下不影响图案的达。"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:1718"
+          }
+        },
+        {
+          "start": {
+            "identity": 1718,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureDescription"
+            ],
+            "properties": {
+              "ns0__artisticFeaturelexicalDensity": "0.307116104868914",
+              "uri": "file:///artisticFeatureYSTZ_description_262",
+              "ns0__artisticFeaturelexic": [
+                "厘米",
+                "",
+                "情况",
+                "纬线",
+                "花型",
+                "两组",
+                "妆花绸",
+                "妆织",
+                "织彩",
+                "织物",
+                "品种",
+                "特色",
+                "地部",
+                "平纹",
+                "北京故宫",
+                "串枝",
+                "纬浮花",
+                "纬重平组织",
+                "妆花",
+                "长度",
+                "图案",
+                "交织",
+                "纬线共口",
+                "牡丹",
+                "固结点",
+                "产品",
+                "织造",
+                "一组",
+                "彩纬",
+                "暗花",
+                "工艺",
+                "牢度",
+                "设计",
+                "宋代",
+                "云锦",
+                "难度"
+              ],
+              "ns2__description": "云锦妆花中平纹类的衍生产品很有特色，归于纬重平品种的织物地部有一粗一细两组纬线共口组成纬重平组织。如北京故宫保存的“月白地织彩串枝牡丹纹妆花绸主要在宋代，”就是这样的品种，在地部由于一粗一细两根纬线共口，合并后较粗，地部呈现横凸纹。在暗花处，其中一组较细的纬线不参加交织而浮于织物面，最大浮长可达一厘米。而彩纬妆织时与暗花一样也无固结点，考虑到纬浮花的牢度，最大浮长也控制在一厘米范围内。这类品种的难度不是体现在织造工艺方面，而是在图案设计时就要安排好花型与每色妆织的宽度及暗花纬浮长的宽度，在浮长长度受到限制的情况下不影响图案的达。"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:1718"
+          },
+          "relationship": {
+            "identity": 3316,
+            "start": 1718,
+            "end": 2253,
+            "type": "ns0__artisticFeatureitemName",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:3316",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:1718",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2253"
+          },
+          "end": {
+            "identity": 2253,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureFeatureType"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_262_001",
+              "rdf__value": "概述"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2253"
+          }
+        },
+        {
+          "start": {
+            "identity": 2253,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureFeatureType"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_262_001",
+              "rdf__value": "概述"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2253"
+          },
+          "relationship": {
+            "identity": 4431,
+            "start": 2253,
+            "end": 2251,
+            "type": "skos__broader",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:4431",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2253",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2251"
+          },
+          "end": {
+            "identity": 2251,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureSubSubject"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_262_002",
+              "rdf__value": "平纹类"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2251"
+          }
+        },
+        {
+          "start": {
+            "identity": 2251,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureSubSubject"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_262_002",
+              "rdf__value": "平纹类"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2251"
+          },
+          "relationship": {
+            "identity": 5323,
+            "start": 2251,
+            "end": 2254,
+            "type": "skos__broader",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:5323",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2251",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2254"
+          },
+          "end": {
+            "identity": 2254,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureSubject"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_262_003",
+              "rdf__value": "艺术特征"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2254"
+          }
+        }
+      ],
+      "length": 4.0
+    }
+  },
+  {
+    "p": {
+      "start": {
+        "identity": 51,
+        "labels": [
+          "Resource",
+          "ns0__artisticFeatureBrocade"
+        ],
+        "properties": {
+          "ns1__name": "云锦",
+          "uri": "file:///artisticFeatureYSTZ_Brocade_133_126"
+        },
+        "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:51"
+      },
+      "end": {
+        "identity": 2351,
+        "labels": [
+          "Resource",
+          "ns0__artisticFeatureSubject"
+        ],
+        "properties": {
+          "uri": "file:///artisticFeatureYSTZ_category_104_004",
+          "rdf__value": "艺术特征"
+        },
+        "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2351"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 51,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureBrocade"
+            ],
+            "properties": {
+              "ns1__name": "云锦",
+              "uri": "file:///artisticFeatureYSTZ_Brocade_133_126"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:51"
+          },
+          "relationship": {
+            "identity": 793,
+            "start": 51,
+            "end": 3411,
+            "type": "ns0__artisticFeatureartisticFeature",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:793",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:51",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:3411"
+          },
+          "end": {
+            "identity": 3411,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureDescription"
+            ],
+            "properties": {
+              "ns0__artisticFeaturelexicalDensity": "0.155844155844156",
+              "uri": "file:///artisticFeatureYSTZ_description_104",
+              "ns0__artisticFeaturelexic": [
+                "以来",
+                "皇帝",
+                "嵩山少林寺",
+                "佛教",
+                "陆修静",
+                "气节",
+                "思想",
+                "东林寺",
+                "绘画",
+                "陶渊明",
+                "题材",
+                "成化",
+                "朱熹",
+                "黄金",
+                "诗人",
+                "宫廷",
+                "道士",
+                "带头",
+                "艺术",
+                "图画",
+                "朱见深",
+                "一团和气",
+                "漫画",
+                "终日",
+                "表现",
+                "扉页",
+                "成语",
+                "程颢",
+                "南村辍耕录",
+                "道教",
+                "前后",
+                "大臣",
+                "投机",
+                "儒教",
+                "老虎",
+                "故事",
+                "两种",
+                "题记",
+                "明代",
+                "五谷",
+                "和合二仙",
+                "明朝",
+                "原则",
+                "元明",
+                "宋代",
+                "百家",
+                "先生"
+              ],
+              "ns2__description": "在我国的传统艺术中，最为表现和谐的有两种题材，一是“和合二仙”，二是“一团和气”，都是出现于宋代前后。“一团和气”的成语出自朱熹《伊洛渊源录》卷三引《上蔡语录》说：“明道(程颢）终日坐，如泥塑人，然接人浑是一团和气……”后来将此形容和蔼可亲，待人和气。不知为什么，人们在使用这个成语时，语气中带有不讲原则、好好先生的贬义，这是在原文中没有的。有人说是在明朝的宫廷中，大臣之间借此讽刺那种毕恭毕敬、毫无气节的人，不知确否。更早的还有一则“虎溪三笑”的故事。相传庐山东林寺主持慧远，送客未曾过虎溪。诗人陶渊明与道士陆修静同访，三人谈得非常投机，语道契合，相送时不觉过溪，连山上的老虎也感到惊奇，吼叫起来，三人相与大笑。这个故事启发了“三教合一”的思想，元明以来有不少论说。《南村辍耕录》就列有“三教一源图'并说：“释如黄金，道如白璧，儒如五谷。……黄金、白璧，无亦何妨,五谷于世其可一日阙哉。”嵩山少林寺有一座明代的《混元三教九流图》碑，有图有赞，图为三教之首画成一人团坐，手持九流之图；赞为“佛教见性，道教保命，儒教明伦，纲常是正。……为善殊途，咸归于治。……要在圆融，一以贯之。三教一体，九流一源。百家一理，万法一门。”明代,画这种漫画式的、将三人画为一人的图画很多，有的印在书上。一本《太和图》的扉页画上还画有条幅，明确写着：“一团和气现三身，本性原来共一真；众生休别分三教，一体同看即一人。”据说带头这样做的是明朝的成化皇帝朱见深。他善绘画，而且画的就是“虎溪三笑”的三人合一，并且在题记中指出：“伟哉！达人遐观高视，谈笑有仪，俯仰不愧，合三人以为一，忘彼此之是非，蔼一团之和气。”"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:3411"
+          }
+        },
+        {
+          "start": {
+            "identity": 3411,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureDescription"
+            ],
+            "properties": {
+              "ns0__artisticFeaturelexicalDensity": "0.155844155844156",
+              "uri": "file:///artisticFeatureYSTZ_description_104",
+              "ns0__artisticFeaturelexic": [
+                "以来",
+                "皇帝",
+                "嵩山少林寺",
+                "佛教",
+                "陆修静",
+                "气节",
+                "思想",
+                "东林寺",
+                "绘画",
+                "陶渊明",
+                "题材",
+                "成化",
+                "朱熹",
+                "黄金",
+                "诗人",
+                "宫廷",
+                "道士",
+                "带头",
+                "艺术",
+                "图画",
+                "朱见深",
+                "一团和气",
+                "漫画",
+                "终日",
+                "表现",
+                "扉页",
+                "成语",
+                "程颢",
+                "南村辍耕录",
+                "道教",
+                "前后",
+                "大臣",
+                "投机",
+                "儒教",
+                "老虎",
+                "故事",
+                "两种",
+                "题记",
+                "明代",
+                "五谷",
+                "和合二仙",
+                "明朝",
+                "原则",
+                "元明",
+                "宋代",
+                "百家",
+                "先生"
+              ],
+              "ns2__description": "在我国的传统艺术中，最为表现和谐的有两种题材，一是“和合二仙”，二是“一团和气”，都是出现于宋代前后。“一团和气”的成语出自朱熹《伊洛渊源录》卷三引《上蔡语录》说：“明道(程颢）终日坐，如泥塑人，然接人浑是一团和气……”后来将此形容和蔼可亲，待人和气。不知为什么，人们在使用这个成语时，语气中带有不讲原则、好好先生的贬义，这是在原文中没有的。有人说是在明朝的宫廷中，大臣之间借此讽刺那种毕恭毕敬、毫无气节的人，不知确否。更早的还有一则“虎溪三笑”的故事。相传庐山东林寺主持慧远，送客未曾过虎溪。诗人陶渊明与道士陆修静同访，三人谈得非常投机，语道契合，相送时不觉过溪，连山上的老虎也感到惊奇，吼叫起来，三人相与大笑。这个故事启发了“三教合一”的思想，元明以来有不少论说。《南村辍耕录》就列有“三教一源图'并说：“释如黄金，道如白璧，儒如五谷。……黄金、白璧，无亦何妨,五谷于世其可一日阙哉。”嵩山少林寺有一座明代的《混元三教九流图》碑，有图有赞，图为三教之首画成一人团坐，手持九流之图；赞为“佛教见性，道教保命，儒教明伦，纲常是正。……为善殊途，咸归于治。……要在圆融，一以贯之。三教一体，九流一源。百家一理，万法一门。”明代,画这种漫画式的、将三人画为一人的图画很多，有的印在书上。一本《太和图》的扉页画上还画有条幅，明确写着：“一团和气现三身，本性原来共一真；众生休别分三教，一体同看即一人。”据说带头这样做的是明朝的成化皇帝朱见深。他善绘画，而且画的就是“虎溪三笑”的三人合一，并且在题记中指出：“伟哉！达人遐观高视，谈笑有仪，俯仰不愧，合三人以为一，忘彼此之是非，蔼一团之和气。”"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:3411"
+          },
+          "relationship": {
+            "identity": 3314,
+            "start": 3411,
+            "end": 2353,
+            "type": "ns0__artisticFeatureitemName",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:3314",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:3411",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2353"
+          },
+          "end": {
+            "identity": 2353,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureFeatureType"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_104_001",
+              "rdf__value": "概述"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2353"
+          }
+        },
+        {
+          "start": {
+            "identity": 2353,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureFeatureType"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_104_001",
+              "rdf__value": "概述"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2353"
+          },
+          "relationship": {
+            "identity": 4042,
+            "start": 2353,
+            "end": 2354,
+            "type": "skos__broader",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:4042",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2353",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2354"
+          },
+          "end": {
+            "identity": 2354,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureSubSubject"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_104_002",
+              "rdf__value": "和合二仙     一团和气"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2354"
+          }
+        },
+        {
+          "start": {
+            "identity": 2354,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureSubSubject"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_104_002",
+              "rdf__value": "和合二仙     一团和气"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2354"
+          },
+          "relationship": {
+            "identity": 5450,
+            "start": 2354,
+            "end": 2357,
+            "type": "skos__broader",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:5450",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2354",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2357"
+          },
+          "end": {
+            "identity": 2357,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureSubSubject"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_104_003",
+              "rdf__value": "题材"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2357"
+          }
+        },
+        {
+          "start": {
+            "identity": 2357,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureSubSubject"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_104_003",
+              "rdf__value": "题材"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2357"
+          },
+          "relationship": {
+            "identity": 626,
+            "start": 2357,
+            "end": 2351,
+            "type": "skos__broader",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:626",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2357",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2351"
+          },
+          "end": {
+            "identity": 2351,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureSubject"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_104_004",
+              "rdf__value": "艺术特征"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2351"
+          }
+        }
+      ],
+      "length": 5.0
+    }
+  },
+  {
+    "p": {
+      "start": {
+        "identity": 51,
+        "labels": [
+          "Resource",
+          "ns0__artisticFeatureBrocade"
+        ],
+        "properties": {
+          "ns1__name": "云锦",
+          "uri": "file:///artisticFeatureYSTZ_Brocade_133_126"
+        },
+        "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:51"
+      },
+      "end": {
+        "identity": 2564,
+        "labels": [
+          "Resource",
+          "ns0__artisticFeatureSubject"
+        ],
+        "properties": {
+          "uri": "file:///artisticFeatureYSTZ_category_176_003",
+          "rdf__value": "艺术特征"
+        },
+        "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2564"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 51,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureBrocade"
+            ],
+            "properties": {
+              "ns1__name": "云锦",
+              "uri": "file:///artisticFeatureYSTZ_Brocade_133_126"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:51"
+          },
+          "relationship": {
+            "identity": 690,
+            "start": 51,
+            "end": 2559,
+            "type": "ns0__artisticFeatureartisticFeature",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:690",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:51",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2559"
+          },
+          "end": {
+            "identity": 2559,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureDescription"
+            ],
+            "properties": {
+              "ns0__artisticFeaturelexicalDensity": "0.269607843137255",
+              "uri": "file:///artisticFeatureYSTZ_description_176",
+              "ns0__artisticFeaturelexic": [
+                "束综",
+                "纬线",
+                "背衬",
+                "斜纹",
+                "位置",
+                "后期",
+                "纬向",
+                "多彩纹纬",
+                "密度",
+                "长期",
+                "花纬",
+                "一色",
+                "织物",
+                "品种",
+                "斜纹类妆花品种",
+                "地纬",
+                "地部",
+                "组织",
+                "纬面",
+                "拽花",
+                "辽宋",
+                "基础",
+                "时期",
+                "纹纬",
+                "地经",
+                "显色",
+                "早期",
+                "妆花",
+                "织成",
+                "暗花绫",
+                "交织",
+                "结构",
+                "构成",
+                "挖花",
+                "经丝",
+                "同时",
+                "挖织",
+                "织造",
+                "一组",
+                "面料",
+                "地结型",
+                "经面",
+                "工艺",
+                "目前",
+                "开口",
+                "妆花绫",
+                "明清",
+                "障框",
+                "花部",
+                "葵花"
+              ],
+              "ns2__description": "纯斜纹类妆花品种在明清时期出现较少，目前已知较早的妆花绫出现在辽宋时期，都是地结型妆花，有纹纬与地纬1:1的，也有1:2的；有一色纹纬挖织的，也有多彩纹纬挖织的。如耶律羽之墓出土的“葵花对鸽雀蝶妆花绫袍”上的面料，纬向由一组地纬与数组花纬构成，妆花纬与地纬呈1:1排列，地经与地纬织成1/5S向斜纹作地，在花部地经与地纬交织成5/1Z向斜纹背衬在底部，地经与妆花纬线还是织成1/5S向斜纹位于织物层，此时花部与地部的面组织是相同的。从结构图中可以推测，斜纹妆花绫的织造工艺完全是建立在暗花绫的基础之上的，织地纬时拽花形成纬面地组织、经面花组织。挖花妆织位置就在经面花组织处，只要用束综拽起妆花开口，同时压下地纬的同一障框就可挖织出妆花色纬。与后期妆花不同的是，妆花绫的全部经丝都参与了和纹纬的交织，交织密度大，对纹纬的显色效果有所影响。从早期的挖花品种到后期成熟的挖花品种可以看出，妆花工艺经历了一个长期的发展过程。"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2559"
+          }
+        },
+        {
+          "start": {
+            "identity": 2559,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureDescription"
+            ],
+            "properties": {
+              "ns0__artisticFeaturelexicalDensity": "0.269607843137255",
+              "uri": "file:///artisticFeatureYSTZ_description_176",
+              "ns0__artisticFeaturelexic": [
+                "束综",
+                "纬线",
+                "背衬",
+                "斜纹",
+                "位置",
+                "后期",
+                "纬向",
+                "多彩纹纬",
+                "密度",
+                "长期",
+                "花纬",
+                "一色",
+                "织物",
+                "品种",
+                "斜纹类妆花品种",
+                "地纬",
+                "地部",
+                "组织",
+                "纬面",
+                "拽花",
+                "辽宋",
+                "基础",
+                "时期",
+                "纹纬",
+                "地经",
+                "显色",
+                "早期",
+                "妆花",
+                "织成",
+                "暗花绫",
+                "交织",
+                "结构",
+                "构成",
+                "挖花",
+                "经丝",
+                "同时",
+                "挖织",
+                "织造",
+                "一组",
+                "面料",
+                "地结型",
+                "经面",
+                "工艺",
+                "目前",
+                "开口",
+                "妆花绫",
+                "明清",
+                "障框",
+                "花部",
+                "葵花"
+              ],
+              "ns2__description": "纯斜纹类妆花品种在明清时期出现较少，目前已知较早的妆花绫出现在辽宋时期，都是地结型妆花，有纹纬与地纬1:1的，也有1:2的；有一色纹纬挖织的，也有多彩纹纬挖织的。如耶律羽之墓出土的“葵花对鸽雀蝶妆花绫袍”上的面料，纬向由一组地纬与数组花纬构成，妆花纬与地纬呈1:1排列，地经与地纬织成1/5S向斜纹作地，在花部地经与地纬交织成5/1Z向斜纹背衬在底部，地经与妆花纬线还是织成1/5S向斜纹位于织物层，此时花部与地部的面组织是相同的。从结构图中可以推测，斜纹妆花绫的织造工艺完全是建立在暗花绫的基础之上的，织地纬时拽花形成纬面地组织、经面花组织。挖花妆织位置就在经面花组织处，只要用束综拽起妆花开口，同时压下地纬的同一障框就可挖织出妆花色纬。与后期妆花不同的是，妆花绫的全部经丝都参与了和纹纬的交织，交织密度大，对纹纬的显色效果有所影响。从早期的挖花品种到后期成熟的挖花品种可以看出，妆花工艺经历了一个长期的发展过程。"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2559"
+          },
+          "relationship": {
+            "identity": 5017,
+            "start": 2559,
+            "end": 2566,
+            "type": "ns0__artisticFeatureitemName",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:5017",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2559",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2566"
+          },
+          "end": {
+            "identity": 2566,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureFeatureType"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_176_001",
+              "rdf__value": "概述"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2566"
+          }
+        },
+        {
+          "start": {
+            "identity": 2566,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureFeatureType"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_176_001",
+              "rdf__value": "概述"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2566"
+          },
+          "relationship": {
+            "identity": 4876,
+            "start": 2566,
+            "end": 2569,
+            "type": "skos__broader",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:4876",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2566",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2569"
+          },
+          "end": {
+            "identity": 2569,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureSubSubject"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_176_002",
+              "rdf__value": "妆花"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2569"
+          }
+        },
+        {
+          "start": {
+            "identity": 2569,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureSubSubject"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_176_002",
+              "rdf__value": "妆花"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2569"
+          },
+          "relationship": {
+            "identity": 3907,
+            "start": 2569,
+            "end": 2564,
+            "type": "skos__broader",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:3907",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2569",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2564"
+          },
+          "end": {
+            "identity": 2564,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureSubject"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_176_003",
+              "rdf__value": "艺术特征"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2564"
+          }
+        }
+      ],
+      "length": 4.0
+    }
+  },
+  {
+    "p": {
+      "start": {
+        "identity": 51,
+        "labels": [
+          "Resource",
+          "ns0__artisticFeatureBrocade"
+        ],
+        "properties": {
+          "ns1__name": "云锦",
+          "uri": "file:///artisticFeatureYSTZ_Brocade_133_126"
+        },
+        "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:51"
+      },
+      "end": {
+        "identity": 2893,
+        "labels": [
+          "Resource",
+          "ns0__artisticFeatureSubject"
+        ],
+        "properties": {
+          "uri": "file:///artisticFeatureYSTZ_category_169_004",
+          "rdf__value": "艺术特征"
+        },
+        "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2893"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 51,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureBrocade"
+            ],
+            "properties": {
+              "ns1__name": "云锦",
+              "uri": "file:///artisticFeatureYSTZ_Brocade_133_126"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:51"
+          },
+          "relationship": {
+            "identity": 813,
+            "start": 51,
+            "end": 2327,
+            "type": "ns0__artisticFeatureartisticFeature",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:813",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:51",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2327"
+          },
+          "end": {
+            "identity": 2327,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureDescription"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_description_169",
+              "ns2__description": "在织造方法上，是以挖花作为表现纹样的主要手段，用绕有各种不同颜色的彩绒纬管，对织料上的花纹作局部的盘织妆彩，配色非常自由，没有任何限制，能达到逐花异色的效果，突破了宋、元以来重纬织物“通梭织彩，分匹换色”的传统"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2327"
+          }
+        },
+        {
+          "start": {
+            "identity": 2327,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureDescription"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_description_169",
+              "ns2__description": "在织造方法上，是以挖花作为表现纹样的主要手段，用绕有各种不同颜色的彩绒纬管，对织料上的花纹作局部的盘织妆彩，配色非常自由，没有任何限制，能达到逐花异色的效果，突破了宋、元以来重纬织物“通梭织彩，分匹换色”的传统"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2327"
+          },
+          "relationship": {
+            "identity": 3947,
+            "start": 2327,
+            "end": 2897,
+            "type": "ns0__artisticFeatureitemName",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:3947",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2327",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2897"
+          },
+          "end": {
+            "identity": 2897,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureFeatureType"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_169_001",
+              "rdf__value": "概述"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2897"
+          }
+        },
+        {
+          "start": {
+            "identity": 2897,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureFeatureType"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_169_001",
+              "rdf__value": "概述"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2897"
+          },
+          "relationship": {
+            "identity": 4554,
+            "start": 2897,
+            "end": 2895,
+            "type": "skos__broader",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:4554",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2897",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2895"
+          },
+          "end": {
+            "identity": 2895,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureSubSubject"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_169_002",
+              "rdf__value": "颜色"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2895"
+          }
+        },
+        {
+          "start": {
+            "identity": 2895,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureSubSubject"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_169_002",
+              "rdf__value": "颜色"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2895"
+          },
+          "relationship": {
+            "identity": 996,
+            "start": 2895,
+            "end": 2894,
+            "type": "skos__broader",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:996",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2895",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2894"
+          },
+          "end": {
+            "identity": 2894,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureSubSubject"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_169_003",
+              "rdf__value": "配色"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2894"
+          }
+        },
+        {
+          "start": {
+            "identity": 2894,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureSubSubject"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_169_003",
+              "rdf__value": "配色"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2894"
+          },
+          "relationship": {
+            "identity": 3281,
+            "start": 2894,
+            "end": 2893,
+            "type": "skos__broader",
+            "properties": {
+
+            },
+            "elementId": "5:8706a8ba-7309-4c00-bf18-70ce0fd578e0:3281",
+            "startNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2894",
+            "endNodeElementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2893"
+          },
+          "end": {
+            "identity": 2893,
+            "labels": [
+              "Resource",
+              "ns0__artisticFeatureSubject"
+            ],
+            "properties": {
+              "uri": "file:///artisticFeatureYSTZ_category_169_004",
+              "rdf__value": "艺术特征"
+            },
+            "elementId": "4:8706a8ba-7309-4c00-bf18-70ce0fd578e0:2893"
+          }
+        }
+      ],
+      "length": 5.0
+    }
+  }
+]
