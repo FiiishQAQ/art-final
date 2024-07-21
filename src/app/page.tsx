@@ -1,16 +1,15 @@
 'use client'
 
-import staticRecords from './records-new.json';
 import Graph from "@/app/((comp))/Graph";
 import {Color} from "d3";
 import {estDriver} from "@/lib/neo4j";
-import {Fragment, useCallback, useEffect, useRef, useState} from "react";
+import {Fragment, useCallback, useEffect, useState} from "react";
 import {Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form";
 import {useForm} from "react-hook-form";
 import {Input} from "@/components/ui/input";
 import {Button} from "@/components/ui/button";
 import {Separator} from "@/components/ui/separator";
-import {ChevronsUpDown, GripVertical} from "lucide-react";
+import {ChevronsUpDown, Inbox} from "lucide-react";
 import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious} from "@/components/ui/carousel";
 import {
   DropdownMenu,
@@ -19,12 +18,13 @@ import {
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
 import {SortableList} from "@/components/SortableList";
+import {doQuery} from "@/app/action";
 
 const layerName = ['文本', '文本属性', '三级子主题', '二级子主题', '一级子主题', '主题']
 
 export {layerName}
 
-const initialLayerOrder = [0,1,2,3,4,5];
+const initialLayerOrder = [0, 1, 2, 3, 4, 5];
 
 export type BaseNode = {
   identity: number;
@@ -106,33 +106,16 @@ const ichTypes = [
 ]
 
 export default function Home() {
-  const [records, setRecords] = useState(staticRecords);
+  const [records, setRecords] = useState<any[]>([]);
   const [keyword, setKeyword] = useState('');
   const [selectedIchTypes, setSelectedIchTypes] = useState<string[]>([]);
 
-  async function doQuery() {
-    const {records, summary, keys} = await estDriver.executeQuery(
-      `
-      match p=(n)-[*1..6]->(n1:ns0__artisticFeatureSubject)
-      where n.ns1__name in $selectedIchTypes
-      ${keyword ? 'AND ANY(x IN nodes(p) WHERE ANY(prop IN keys(x) WHERE x[prop] CONTAINS $keyword))' : ''}
-      return p
-      `,
-      // 'MATCH (n:ns0__artisticFeatureBrocade) RETURN n LIMIT 25',
-      {
-        selectedIchTypes: selectedIchTypes.length > 0 ? selectedIchTypes : ichTypes.flatMap(({types}) => types),
-        keyword
-      },
-      {database: 'neo4j'}
-    )
-
-    // console.log('query res', records.values(), records, summary, keys);
-
-    return records.map((record: any) => ({p: record._fields[0]}))
-  }
 
   useEffect(() => {
-    // doQuery().then((res) => {setRecords(res)});
+    doQuery(keyword, selectedIchTypes, ichTypes.flatMap(({types}) => types))
+      .then((res) => {
+        setRecords(res)
+      });
     window.onresize = () => {
       setRecords(r => [...r])
     }
@@ -162,7 +145,7 @@ export default function Home() {
       let subSubjectLayer = 0;
 
       const pathSubSubjects: BaseNode[] = [];
-      segments.forEach((segment, index) => {
+      (segments as any[]).forEach((segment) => {
         const start = segment.start;
 
         type segEndWithPath = typeof segment.end & { path: Path };
@@ -335,9 +318,10 @@ export default function Home() {
             )}
           />
           <Button size='sm' className='mt-4' type="submit" onClick={() => {
-            doQuery().then((res) => {
-              setRecords(res)
-            });
+            doQuery(keyword, selectedIchTypes, ichTypes.flatMap(({types}) => types))
+              .then((res) => {
+                setRecords(res)
+              });
           }}>搜索</Button>
         </Form>
         <Separator className='my-6'/>
@@ -358,26 +342,37 @@ export default function Home() {
       <div className='card h-full svg_con flex-0'>
         <Graph paths={paths} layerOrder={layerOrder.map(item => item.id - 1)} onOverPath={setHighlightingPaths}/>
       </div>
-      <div className='card h-full w-1/4 flex flex-col'>
+      <div className='card h-full w-1/4 flex flex-col justify-stretch'>
         <h2 className="my-2 font-bold text-2xl text-gray-700 p-4 pb-0 flex-grow-0 flex-shrink-0">文本节点</h2>
-        <Carousel className={'relative w-full flex-1 min-h-20 flex'}>
-          <CarouselContent className='h-full'>
-            {
-              highlightingPaths.map((path, index) => {
-                return (
-                  <CarouselItem key={index} className='overflow-auto h-full pb-4'>
-                    <div className={'flex w-full gap-2 flex-col px-4'}>
-                      {layerOrder.map((layer) => makeNodeCard(layer.id - 1, path[layer.id - 1], index))}
-                    </div>
-                  </CarouselItem>
-                )
-              })
-            }
-          </CarouselContent>
-          <CarouselPrevious className={'absolute top-0 left-full'}
-                            style={{transform: 'translate(calc(-250% - 8px), calc(-100% - 6px))'}}/>
-          <CarouselNext className={'absolute top-0 right-0'} style={{transform: 'translate(-50%, calc(-100% - 6px))'}}/>
-        </Carousel>
+        {
+          highlightingPaths.length > 0 ? (
+            <Carousel className={'relative w-full flex-1 min-h-20 flex min-w-20'}>
+              <CarouselContent className='h-full'>
+                {
+                  highlightingPaths.map((path, index) => {
+                    return (
+                      <CarouselItem key={index} className='overflow-auto h-full pb-4'>
+                        <div className={'flex w-full gap-2 flex-col px-4'}>
+                          {layerOrder.map((layer) => makeNodeCard(layer.id - 1, path[layer.id - 1], index))}
+                        </div>
+                      </CarouselItem>
+                    )
+                  })
+                }
+              </CarouselContent>
+              <CarouselPrevious className={'absolute top-0 left-full'}
+                                style={{transform: 'translate(calc(-250% - 8px), calc(-100% - 6px))'}}/>
+              <CarouselNext className={'absolute top-0 right-0'}
+                            style={{transform: 'translate(-50%, calc(-100% - 6px))'}}/>
+            </Carousel>
+          ) : (
+            <div className='m-4 flex justify-center items-center flex-col h-3/4'>
+              <Inbox size={40} opacity={0.7}/>
+              <p className='font-medium opacity-75 mt-2'>暂无节点信息</p>
+              <p className='text-sm opacity-50'>请在图表中选择查看</p>
+            </div>
+          )
+        }
       </div>
     </main>
   );

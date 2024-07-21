@@ -3,7 +3,7 @@
 import * as d3 from "d3";
 import {memo, useCallback, useEffect, useRef} from "react";
 import {BaseNode, layerName, Nodes, NodeType, Path, Relation} from "@/app/page";
-import {flatten, groupBy, update} from "lodash-es";
+import {flatten, groupBy} from "lodash-es";
 import {Color, RGBColor} from "d3";
 
 const padding = 64;
@@ -24,16 +24,11 @@ type GroupRect = {
   paths: Path[],
 };
 
-function deduplicatedPush(node: BaseNode, arr: any[], hashArr: { [key: string | number]: BaseNode }) {
-  if (!hashArr[node.identity]) {
-    hashArr[node.identity] = node;
-    arr.push(node);
-  }
-}
-
-let mouseTimeout: NodeJS.Timeout | null = null;
-
-const Graph = memo(function Graph({paths, onOverPath, layerOrder}: { paths: Path[], onOverPath: (p: Path[]) => void, layerOrder: number[]}) {
+const Graph = memo(function Graph({paths, onOverPath, layerOrder}: {
+  paths: Path[],
+  onOverPath: (p: Path[]) => void,
+  layerOrder: number[]
+}) {
   const width = window.innerWidth * 0.6;
   const height = window.innerHeight;
 
@@ -131,6 +126,8 @@ const Graph = memo(function Graph({paths, onOverPath, layerOrder}: { paths: Path
 
   // const did = useRef(false);
 
+  const selecting = useRef(false);
+
   useEffect(() => {
     console.log('rerender')
 
@@ -174,38 +171,47 @@ const Graph = memo(function Graph({paths, onOverPath, layerOrder}: { paths: Path
       //   d3.selectAll('.highlighting')
       //     .classed('highlighting', false)
 
-        if (toState === 'show') {
-          mask
-            .transition()
-            .style('fill', 'rgba(255,255,255,0.7)')
-            .each(function () {
-              (this as any).parentNode.appendChild(this);
-            })
+      if (toState === 'show') {
+        mask
+          .transition()
+          .style('fill', 'rgba(255,255,255,0.7)')
+          .each(function () {
+            (this as any).parentNode.appendChild(this);
+          })
 
-          d3.selectAll(pathClass)
-            .classed('highlighting' + (isGroup ? '_group' : ''), true)
-            .each(function () {
-              (this as any).parentNode.appendChild(this);
-            });
-        } else if (toState === 'hide') {
-          console.log('hiding')
-          d3.selectAll('.highlighting')
-            .classed('highlighting', false)
+        d3.selectAll(pathClass)
+          .classed('highlighting' + (isGroup ? '_group' : ''), true)
+          .each(function () {
+            (this as any).parentNode.appendChild(this);
+          });
+      } else if (toState === 'hide') {
+        console.log('hiding')
+        d3.selectAll('.highlighting')
+          .classed('highlighting', false)
 
-          d3.selectAll('.highlighting_group')
-            .classed('highlighting_group', false)
+        d3.selectAll('.highlighting_group')
+          .classed('highlighting_group', false)
 
-          mask
-            .transition()
-            .style('fill', 'rgba(255,255,255,0)')
+        mask
+          .transition()
+          .style('fill', 'rgba(255,255,255,0)')
 
-          d3.selectAll('.textGroupRectText, .textNodeGroupRectText, .textGroupRect')
-            .each(function () {
-              (this as any).parentNode.appendChild(this);
-            });
-        }
+        d3.selectAll('.nodeGroupRectText, .textNodeGroupRectText, .nodeGroupRect')
+          .each(function () {
+            (this as any).parentNode.appendChild(this);
+          });
+      }
       // }, 25)
     }
+
+    mask
+      .on('click', () => {
+        mask
+          .style('pointer-events', 'none')
+        selecting.current = false;
+        switchHighlight()
+        onOverPath([]);
+      })
 
     const y = d3.scaleLinear([0, 5], [padding, height - padding]);
 
@@ -294,7 +300,17 @@ const Graph = memo(function Graph({paths, onOverPath, layerOrder}: { paths: Path
               const groupClass = d.classes.trim().split(' ').map(c => '.' + c).join(',');
               switchHighlight(groupClass, 'show', true)
             })
-            .on('mouseout', () => switchHighlight())
+            .on('click', () => {
+              selecting.current = true;
+              mask
+                .style('pointer-events', 'all')
+            })
+            .on('mouseout', () => {
+              if(!selecting.current) {
+                switchHighlight();
+                onOverPath([]);
+              }
+            })
         },
         update => {
           update
@@ -325,9 +341,19 @@ const Graph = memo(function Graph({paths, onOverPath, layerOrder}: { paths: Path
             .attr("stroke", d => `url(#rlg-${d.identity})`)
             .on('mouseover', (event, d) => {
               onOverPath([d.path]);
-              d.pathClass && switchHighlight('.'+d.pathClass, 'show')
+              d.pathClass && switchHighlight('.' + d.pathClass, 'show')
             })
-            .on('mouseout', () => switchHighlight())
+            .on('click', () => {
+              selecting.current = true;
+              mask
+                .style('pointer-events', 'all')
+            })
+            .on('mouseout', () => {
+              if(!selecting.current) {
+                switchHighlight();
+                onOverPath([]);
+              }
+            })
         },
         update => {
           update
@@ -348,27 +374,37 @@ const Graph = memo(function Graph({paths, onOverPath, layerOrder}: { paths: Path
         }
       )
 
-    svg.selectAll('.textNode')
+    svg.selectAll('.node')
       .data(flatten(nodes), (node) => (node as { identity: number }).identity)
       .join(
         enter => {
           enter.append('circle')
-            .attr("class", d => [d.pathClass, "textNode"].join(' '))
+            .attr("class", d => [d.pathClass, "node"].join(' '))
             .attr('r', dotRadius)
             .attr('fill', d => d.color?.toString() ?? '')
             .attr('cy', d => d.x ?? -10)
             .attr('cx', d => d.y ?? -10)
             .on('mouseover', (event, d) => {
               onOverPath([d.path]);
-              d.pathClass && switchHighlight('.'+d.pathClass, 'show')
+              d.pathClass && switchHighlight('.' + d.pathClass, 'show')
             })
-            .on('mouseout', () => switchHighlight())
+            .on('click', () => {
+              selecting.current = true;
+              mask
+                .style('pointer-events', 'all')
+            })
+            .on('mouseout', () => {
+              if(!selecting.current) {
+                switchHighlight();
+                onOverPath([]);
+              }
+            })
         },
         update => {
           update
             .transition()
             .attr('fill', d => d.color?.toString() ?? '')
-            .attr("class", d => [d.pathClass, "textNode"].join(' '))
+            .attr("class", d => [d.pathClass, "node"].join(' '))
             .attr('cy', d => d.x ?? -10)
             .attr('cx', d => d.y ?? -10)
         },
@@ -377,12 +413,12 @@ const Graph = memo(function Graph({paths, onOverPath, layerOrder}: { paths: Path
         }
       )
 
-    svg.selectAll('.textGroupRect')
+    svg.selectAll('.nodeGroupRect')
       .data(flatten(allNormalGroupRects), (rect) => (rect as GroupRect).name)
       .join(
         enter => {
           enter.append('rect')
-            .attr('class', d => d.classes + ' textGroupRect')
+            .attr('class', d => d.classes + ' nodeGroupRect')
             .attr('width', d => d.w)
             .attr('height', d => d.h)
             .attr('x', d => d.x)
@@ -398,11 +434,21 @@ const Graph = memo(function Graph({paths, onOverPath, layerOrder}: { paths: Path
               const groupClass = d.classes.trim().split(' ').map(c => '.' + c).join(',');
               switchHighlight(groupClass, 'show', true)
             })
-            .on('mouseout', () => switchHighlight())
+            .on('click', () => {
+              selecting.current = true;
+              mask
+                .style('pointer-events', 'all')
+            })
+            .on('mouseout', () => {
+              if(!selecting.current) {
+                switchHighlight();
+                onOverPath([]);
+              }
+            })
         },
         update => {
           update
-            .attr('class', d => d.classes + ' textGroupRect')
+            .attr('class', d => d.classes + ' nodeGroupRect')
             .attr('width', d => d.w)
             .attr('height', d => d.h)
             .attr('x', d => d.x)
@@ -431,7 +477,17 @@ const Graph = memo(function Graph({paths, onOverPath, layerOrder}: { paths: Path
               const groupClass = d.classes.trim().split(' ').map(c => '.' + c).join(',');
               switchHighlight(groupClass, 'show', true)
             })
-            .on('mouseout', () => switchHighlight())
+            .on('click', () => {
+              selecting.current = true;
+              mask
+                .style('pointer-events', 'all')
+            })
+            .on('mouseout', () => {
+              if(!selecting.current) {
+                switchHighlight();
+                onOverPath([]);
+              }
+            })
         },
         update => {
           update
@@ -447,13 +503,13 @@ const Graph = memo(function Graph({paths, onOverPath, layerOrder}: { paths: Path
         }
       )
 
-    svg.selectAll('.textGroupRectText')
+    svg.selectAll('.nodeGroupRectText')
       .data(flatten(allNormalGroupRects), (rect) => (rect as GroupRect).name)
       .join(
         enter => {
           enter
             .append('text')
-            .attr('class', d => d.classes + ' textGroupRectText')
+            .attr('class', d => d.classes + ' nodeGroupRectText')
             .attr('x', d => d.x + d.w / 2)
             .attr('y', d => d.y + d.h * 2 + 3)
             .attr('fill', d => (d.color as RGBColor).darker(1).toString() ?? '')
@@ -463,11 +519,21 @@ const Graph = memo(function Graph({paths, onOverPath, layerOrder}: { paths: Path
               const groupClass = d.classes.trim().split(' ').map(c => '.' + c).join(',');
               switchHighlight(groupClass, 'show', true)
             })
-            .on('mouseout', () => switchHighlight())
+            .on('click', () => {
+              selecting.current = true;
+              mask
+                .style('pointer-events', 'all')
+            })
+            .on('mouseout', () => {
+              if(!selecting.current) {
+                switchHighlight();
+                onOverPath([]);
+              }
+            })
         },
         update => {
           update
-            .attr('class', d => d.classes + ' textGroupRectText')
+            .attr('class', d => d.classes + ' nodeGroupRectText')
             .transition()
             .attr('x', d => d.x + d.w / 2)
             .attr('y', d => d.y + d.h * 2 + 3)
@@ -480,7 +546,7 @@ const Graph = memo(function Graph({paths, onOverPath, layerOrder}: { paths: Path
       )
 
     setTimeout(() => {
-      d3.selectAll('.textGroupRectText, .textNodeGroupRectText, .textGroupRect')
+      d3.selectAll('.nodeGroupRectText, .textNodeGroupRectText, .nodeGroupRect')
         .each(function () {
           (this as any).parentNode.appendChild(this);
         });
@@ -489,8 +555,8 @@ const Graph = memo(function Graph({paths, onOverPath, layerOrder}: { paths: Path
 
   return (
     <svg ref={svgRef} height={height} width={width}>
-      <defs ref={svgDefsRef} />
-      <rect className={'mask'} />
+      <defs ref={svgDefsRef}/>
+      <rect className={'mask'}/>
     </svg>
   );
 }, (prev, next) => prev.paths === next.paths && prev.layerOrder.toString() === next.layerOrder.toString())
